@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_navigation/screens/screens.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +16,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: const Scaffold(
+        body: HeroApp(),
+      ),
     );
   }
 }
