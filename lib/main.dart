@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
       home: const Scaffold(
         //body: HeroApp(),
         //body: FirstRoute(),
-        body: FirstScreen(),
+        //body: NamedRoutes(),
+        body: PassArgument(),
       ),
     );
   }

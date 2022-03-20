@@ -1,5 +1,21 @@
 import 'package:flutter/material.dart';
 
+class NamedRoutes extends StatelessWidget {
+  const NamedRoutes({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/': (context) => const FirstScreen(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/second': (context) => const SecondScreen(),
+      },
+    );
+  }
+}
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({Key? key}) : super(key: key);
