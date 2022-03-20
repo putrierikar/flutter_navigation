@@ -7,9 +7,12 @@ class Todo {
   const Todo(this.title, this.description);
 }
 
-void main() {
-  runApp(
-    MaterialApp(
+class SendDataScreen extends StatelessWidget {
+  const SendDataScreen({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       title: 'Passing Data',
       home: TodosScreen(
         todos: List.generate(
@@ -20,9 +23,10 @@ void main() {
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
+
 
 class TodosScreen extends StatelessWidget {
   const TodosScreen({Key? key, required this.todos}) : super(key: key);
@@ -40,14 +44,14 @@ class TodosScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return ListTile(
             title: Text(todos[index].title),
-            // When a user taps the ListTile, navigate to the DetailScreen.
-            // Notice that you're not only creating a DetailScreen, you're
+            // When a user taps the ListTile, navigate to the DescriptionScreen.
+            // Notice that you're not only creating a DescriptionScreen, you're
             // also passing the current todo through to it.
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailScreen(todo: todos[index]),
+                  builder: (context) => DescriptionScreen(todo: todos[index]),
                 ),
               );
             },
@@ -58,9 +62,9 @@ class TodosScreen extends StatelessWidget {
   }
 }
 
-class DetailScreen extends StatelessWidget {
+class DescriptionScreen extends StatelessWidget {
   // In the constructor, require a Todo.
-  const DetailScreen({Key? key, required this.todo}) : super(key: key);
+  const DescriptionScreen({Key? key, required this.todo}) : super(key: key);
 
   // Declare a field that holds the Todo.
   final Todo todo;
